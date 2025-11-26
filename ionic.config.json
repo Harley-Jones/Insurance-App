@@ -1,0 +1,8 @@
+{
+  "name": "life-insurance-education-platform",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "life-insurance-education"
+}
