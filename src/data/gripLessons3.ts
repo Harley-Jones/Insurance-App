@@ -3,36 +3,36 @@ import { Lesson } from '../types/education';
 export const gripLessons3: Lesson[] = [
   {
     id: 'grip-5',
-    title: 'Advertising Restrictions and Financial Literacy',
-    content: 'A lesser-discussed form of G.R.I.P. is the limitation on the promotion of alternative financial products like cash value life insurance. Regulations restrict the advertisement and public discussion of such products, reducing financial literacy and understanding of diverse wealth-building methods. This underexposure leads individuals to follow conventional, often less effective, paths.',
+    title: 'Constrained Access to Financial Literacy',
+    content: 'Financial literacy is not widely taught in public schools, leaving many without critical money management skills. Without understanding investment vehicles, tax strategies, or wealth-building tools, people remain dependent on government-sanctioned solutions. This educational gap perpetuates reliance on traditional financial systems that benefit government structures.',
     keyPoints: [
-      'Restrictions on financial product advertising',
-      'Reduced public financial literacy',
-      'Limited awareness of alternatives',
-      'Conventional paths reinforced'
+      'Lack of financial education in schools',
+      'Limited access to wealth-building knowledge',
+      'Dependency on traditional systems',
+      'Perpetuates government reliance'
     ],
-    transcript: 'Advertising restrictions represent a subtle but powerful form of G.R.I.P. Regulations limit how alternative financial products like cash value life insurance can be promoted. This reduces public awareness and financial literacy about diverse wealth-building strategies. Sowell\'s critique of government control over economic narratives supports the argument that these restrictions reinforce limited choices and keep people on conventional, often less effective financial paths.',
+    transcript: 'One of the most insidious aspects of G.R.I.P. is the lack of financial literacy education. Public schools rarely teach critical money management skills, investment strategies, or wealth-building techniques. This educational void leaves people dependent on government-sanctioned financial solutions and traditional banking systems. Without this knowledge, individuals cannot leverage powerful tools like whole life insurance or self-directed investment strategies.',
 
     resources: [
-      { title: 'Advertising Regulations Impact', type: 'pdf', url: '#', size: '1.8 MB' },
-      { title: 'Financial Literacy Study', type: 'pdf', url: '#', size: '2.2 MB' }
+      { title: 'Financial Literacy Gap Study', type: 'pdf', url: '#', size: '2.6 MB' },
+      { title: 'Education System Analysis', type: 'pdf', url: '#', size: '1.8 MB' }
     ]
   },
   {
     id: 'grip-6',
-    title: 'Strategies for Building Financial Freedom',
-    content: 'Despite G.R.I.P.\'s pervasive influence, opportunities exist for financial autonomy. Thomas Sowell emphasized that fostering economic freedom involves embracing policies that empower individuals to pursue diverse financial paths. Leveraging lesser-known, tax-efficient strategies like cash value life insurance can offer resilience against these constraints.',
+    title: 'Behavioral Economics and G.R.I.P.\'s Influence on Financial Choices',
+    content: 'Behavioral economics shows how government policies exploit cognitive biases to steer people toward preferred choices. Tax incentives for 401(k)s and IRAs create a false sense of optimal choice while limiting flexibility. These nudges channel people into government-approved financial paths, restricting access to alternative wealth-building strategies.',
     keyPoints: [
-      'Pursue diverse financial strategies',
-      'Leverage tax-efficient tools',
-      'Use cash value life insurance',
-      'Build resilience against constraints'
+      'Government exploits cognitive biases',
+      'Tax incentives create false optimality',
+      'Nudges toward approved paths',
+      'Limits alternative strategies'
     ],
-    transcript: 'Building financial freedom requires understanding and working around G.R.I.P. constraints. Tax-efficient strategies like cash value life insurance provide growth outside traditional retirement accounts. These tools offer liquidity, tax advantages, and protection from market volatility. By understanding G.R.I.P. and leveraging underutilized financial instruments, individuals can build robust, independent financial futures despite government restrictions.',
+    transcript: 'Behavioral economics reveals how government policies exploit our natural cognitive biases. Tax incentives for retirement accounts create an illusion of optimal choice while actually limiting our flexibility and options. These carefully designed nudges channel citizens into government-approved financial paths, restricting access to alternative wealth-building strategies that might offer greater control and returns.',
 
     resources: [
-      { title: 'Financial Freedom Strategies', type: 'pdf', url: '#', size: '3.5 MB' },
-      { title: 'Tax-Efficient Planning Guide', type: 'pdf', url: '#', size: '2.9 MB' }
+      { title: 'Behavioral Economics in Policy', type: 'pdf', url: '#', size: '3.3 MB' },
+      { title: 'Choice Architecture Study', type: 'pdf', url: '#', size: '2.7 MB' }
     ]
   }
 ];
