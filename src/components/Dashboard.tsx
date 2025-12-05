@@ -27,10 +27,10 @@ export default function Dashboard({ modules, progress, onModuleClick }: Dashboar
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Your Learning Path</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <section className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Your Learning Path</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {modules.map(module => {
             const hasCertificate = progress.certificates?.some(c => c.moduleId === module.id);
             return (
@@ -48,8 +48,8 @@ export default function Dashboard({ modules, progress, onModuleClick }: Dashboar
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Achievements</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Achievements</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {badges.map(badge => (
             <Badge
               key={badge.id}

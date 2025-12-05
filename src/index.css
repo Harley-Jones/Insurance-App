@@ -147,6 +147,15 @@
     backface-visibility: hidden;
   }
 
+  /* Hide scrollbar for horizontal scroll containers */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
   /* Ensure touch-friendly tap targets on mobile */
   @media (max-width: 640px) {
     button, a, input, select, textarea {
