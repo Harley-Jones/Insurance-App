@@ -6,12 +6,18 @@ This directory contains native MP4 video files for offline playback in the Insur
 
 ```
 videos/
+├── three-hours-thirty-years.mp4 (Hero video - autoplays on homepage)
 ├── consumer-protection/
 │   ├── red-flags.mp4
 │   ├── green-flags.mp4
 │   ├── verification.mp4
 │   ├── commission-ethics.mp4
 │   └── your-rights.mp4
+├── infinite-banking/
+│   ├── banking-crisis.mp4
+│   ├── wealthy-use-insurance.mp4
+│   ├── infinite-banking-concept.mp4
+│   └── policy-design.mp4
 ├── term-life/
 │   └── intro.mp4
 ├── whole-life/
@@ -40,6 +46,15 @@ For optimal performance and compatibility:
    videoType: 'mp4'
    ```
 
+## Hero Video (Homepage)
+
+**three-hours-thirty-years.mp4** - "Three Hours for the Next 30 Years of Your Life"
+- This video autoplays (muted) as the background of the homepage hero section
+- Users can unmute by clicking the volume button in the top-right corner
+- Should be engaging and explain the value proposition of the app
+- Recommended length: 2-5 minutes (loops continuously)
+- Should work well as a background video (clear visuals, not too busy)
+
 ## Consumer Protection Module Videos
 
 The following videos are required for the Consumer Protection & Ethical Advisors module:
@@ -49,6 +64,13 @@ The following videos are required for the Consumer Protection & Ethical Advisors
 3. **verification.mp4** - Verifying Credentials & Checking Backgrounds (8-10 min)
 4. **commission-ethics.mp4** - Understanding Commission Structures (10-12 min)
 5. **your-rights.mp4** - Your Rights & How to File Complaints (8-10 min)
+
+## Infinite Banking Module Videos
+
+1. **banking-crisis.mp4** - The Banking Crisis You Don't See (12-15 min)
+2. **wealthy-use-insurance.mp4** - How the Wealthy Use Life Insurance (10-12 min)
+3. **infinite-banking-concept.mp4** - The Infinite Banking Concept Explained (12-15 min)
+4. **policy-design.mp4** - Policy Design for IBC (10-12 min)
 
 ## Offline Playback
 

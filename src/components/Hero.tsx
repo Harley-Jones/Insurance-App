@@ -1,6 +1,7 @@
+import { useState, useRef, useEffect } from 'react';
 import ProgressRing from './ProgressRing';
 import { useGamification } from '../contexts/GamificationContext';
-import { Trophy, Flame, Award } from 'lucide-react';
+import { Trophy, Flame, Award, Volume2, VolumeX, Play } from 'lucide-react';
 
 interface HeroProps {
   overallProgress: number;
@@ -11,15 +12,83 @@ interface HeroProps {
 export default function Hero({ overallProgress, completedModules, totalModules }: HeroProps) {
   const { gamification, getCurrentLevel } = useGamification();
   const currentLevel = getCurrentLevel();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(true);
+
+  useEffect(() => {
+    // Attempt autoplay when component mounts
+    if (videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+        setShowPlayButton(false);
+      }).catch((error) => {
+        // Autoplay was prevented - show play button
+        console.log('Autoplay prevented:', error);
+        setShowPlayButton(true);
+      });
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+      setShowPlayButton(false);
+    }
+  };
 
   return (
     <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <img 
-          src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
-          alt="Financial Freedom"
+      {/* Video Background Header */}
+      <div className="absolute inset-0 opacity-40">
+        <video
+          ref={videoRef}
           className="w-full h-full object-cover"
-        />
+          loop
+          muted={isMuted}
+          playsInline
+          preload="metadata"
+          poster="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
+        >
+          <source src="/videos/three-hours-thirty-years.mp4" type="video/mp4" />
+          {/* Fallback image */}
+        </video>
+
+        {/* Play button overlay (shown if autoplay is blocked) */}
+        {showPlayButton && !isPlaying && (
+          <div
+            className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer z-10"
+            onClick={handlePlayClick}
+          >
+            <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all transform hover:scale-110">
+              <Play className="w-16 h-16 text-white" fill="white" />
+            </div>
+          </div>
+        )}
+
+        {/* Mute/Unmute button */}
+        {isPlaying && (
+          <button
+            onClick={toggleMute}
+            className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white rounded-full p-3 transition-all"
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
+          >
+            {isMuted ? (
+              <VolumeX className="w-6 h-6" />
+            ) : (
+              <Volume2 className="w-6 h-6" />
+            )}
+          </button>
+        )}
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
