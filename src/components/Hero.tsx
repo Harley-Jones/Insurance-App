@@ -1,6 +1,7 @@
+import { useState, useRef } from 'react';
 import ProgressRing from './ProgressRing';
 import { useGamification } from '../contexts/GamificationContext';
-import { Trophy, Flame, Award } from 'lucide-react';
+import { Trophy, Flame, Award, Volume2, VolumeX } from 'lucide-react';
 
 interface HeroProps {
   overallProgress: number;
@@ -11,16 +12,50 @@ interface HeroProps {
 export default function Hero({ overallProgress, completedModules, totalModules }: HeroProps) {
   const { gamification, getCurrentLevel } = useGamification();
   const currentLevel = getCurrentLevel();
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
     <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <img 
-          src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
-          alt="Financial Freedom"
+      {/* Video Background */}
+      <div className="absolute inset-0 opacity-30">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/videos/three-hours-30-years.mp4" type="video/mp4" />
+          {/* Fallback image if video doesn't load */}
+          <img
+            src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
+            alt="Financial Freedom"
+            className="w-full h-full object-cover"
+          />
+        </video>
       </div>
+
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-6 right-6 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-all duration-200 group"
+        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+      >
+        {isMuted ? (
+          <VolumeX className="w-6 h-6 text-white" />
+        ) : (
+          <Volume2 className="w-6 h-6 text-white" />
+        )}
+      </button>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
