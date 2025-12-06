@@ -64,61 +64,246 @@ export const modules: Module[] = [
       {
         id: 'whole-1',
         title: 'Understanding Whole Life Insurance',
-        content: `## What is Whole Life Insurance?
+        content: `# WHOLE LIFE INSURANCE — COMPREHENSIVE DEEP DIVE
 
-Whole life insurance is a type of permanent life insurance that provides coverage for your entire lifetime. Unlike term life insurance which expires after a set period, whole life insurance remains in force as long as you pay your premiums.
+## 1. Core Structure of Whole Life Insurance
 
-### Key Features of Whole Life Insurance
+Whole life is a permanent life insurance contract providing:
+- **Lifetime death benefit**
+- **Guaranteed cash value accumulation**
+- **Fixed, level premiums**
+- **Eligibility for dividends** (with participating/mutual carriers)
 
-**1. Lifetime Coverage**
-- Coverage lasts your entire life (to age 100-121 depending on the policy)
-- Death benefit is guaranteed as long as premiums are paid
-- Your beneficiaries receive the death benefit regardless of when you pass away
+It is the most stable, predictable, and contractually guaranteed life insurance structure.
 
-**2. Cash Value Component**
-- A portion of every premium payment goes into a cash value account
-- Cash value grows tax-deferred at a guaranteed rate
-- You own this cash value and can access it through loans or withdrawals
-- Cash value grows slowly at first but accelerates over time
+## 2. Components
 
-**3. Fixed, Level Premiums**
-- Your premium never increases throughout your life
-- Provides predictability in your financial planning
-- Locked in at your age when you purchase the policy
-- Younger purchasers get lower lifetime premiums
+### A. Base Premium
+The required premium that funds:
+- Death benefit guarantees
+- Actuarial reserves
+- A portion of cash value
 
-**4. Guaranteed Death Benefit**
-- The death benefit amount is guaranteed and will not decrease
-- Your beneficiaries receive the full death benefit income tax-free
-- Provides certainty and peace of mind for legacy planning
+### B. Cash Value
+A contractual savings component:
+- Builds every year
+- Grows on a guaranteed schedule
+- Cannot decrease due to market losses
+- Accessible via withdrawals or loans
 
-### How Whole Life Insurance Works
+### C. Dividends (Non-Guaranteed)
+Mutual carriers distribute dividends based on:
+- Mortality experience
+- Operating efficiency
+- Investment portfolio performance
 
-When you pay your whole life insurance premium, the insurance company divides it into three main components:
+Dividends can be used to:
+- Purchase paid-up additions (PUAs)
+- Reduce premiums
+- Take cash
+- Leave on deposit to earn interest
 
-1. **Cost of Insurance**: Covers the death benefit protection
-2. **Cash Value**: Builds your savings component
-3. **Company Expenses**: Administrative costs and agent commissions
+**PUAs are the most powerful choice**, compounding cash value.
 
-Over time, as your cash value grows, it helps offset the increasing cost of insurance as you age, which is why your premiums remain level.
+## 3. Guarantees
 
-### Tax Advantages
+Whole life provides, by contract:
+- ✓ Guaranteed death benefit
+- ✓ Guaranteed cash value growth
+- ✓ Guaranteed level premiums
+- ✓ Guaranteed protection for life
+- ✓ Guaranteed loan access to cash value
 
-Whole life insurance offers several tax benefits:
+These guarantees stand regardless of:
+- Recessions
+- Market crashes
+- Interest rate fluctuations
+- Carrier portfolio volatility
 
-- **Tax-Deferred Growth**: Cash value grows without annual taxation
-- **Tax-Free Death Benefit**: Beneficiaries receive proceeds income tax-free
-- **Tax-Free Policy Loans**: Borrow against cash value without triggering taxes
-- **No Required Distributions**: Unlike retirement accounts, no forced withdrawals
+**This stability is unmatched** by term, variable, indexed, or securities-driven structures.
 
-### Common Uses for Whole Life Insurance
+## 4. Advantages
 
-**Legacy Planning**: Guarantee inheritance for your heirs
-**Estate Taxes**: Provide liquidity to pay estate taxes
-**Infinite Banking**: Use cash value as your own personal bank
-**Retirement Income**: Supplement retirement through policy loans
-**Business Planning**: Fund buy-sell agreements, key person insurance
-**Charitable Giving**: Name charity as beneficiary for tax-efficient giving`,
+### A. Predictability
+Fully stable value path from day one to age 100/121.
+
+### B. Guaranteed Compounding
+Cash value grows at a fixed rate plus potential dividends, creating:
+- Stable accumulation
+- Powerful long-term compounding
+- No market exposure
+
+### C. Policy Loans
+- No credit check
+- No underwriting
+- No set repayment schedule
+- Loans don't interrupt internal compounding
+- Interest flows back into your system if repaid
+
+### D. Lifetime Coverage
+Unlike term, which expires before most people die, whole life covers the insured for life.
+
+### E. Tax Advantages
+- Tax-deferred internal growth
+- Tax-free loans
+- Tax-free death benefit
+
+### F. Estate and Wealth Tools
+- Creates immediate legacy
+- Predictable intergenerational planning
+- Frequently protected from creditors (state-specific)
+- Avoids probate
+
+### G. Multi-use Capital
+One policy can fund:
+- Retirement
+- Real estate
+- Business
+- College
+- Emergency reserves
+- Debt restructuring
+- Generational transfers
+
+### H. Forced Discipline
+Premiums act like automated wealth-building contributions.
+
+## 5. Disadvantages
+
+### A. High Initial Commitment
+Premiums are higher than term.
+
+### B. Cash Value Starts Slowly
+First-year cash value is less than premium due to:
+- Commissions
+- Actuarial reserves
+- Policy costs
+
+### C. Requires Long-Term Commitment
+Whole life rewards:
+- 10+ year horizons
+- Consistent premiums
+- Patient capital behavior
+
+### D. Not Optimized for Market Upside
+Stable growth means no market-linked spikes.
+
+## 6. Design Strategies
+
+### A. High Early Cash Value Design
+- Maximize PUAs
+- Minimize base premium
+- Avoid MEC status via 7-pay rules
+- Use a participating mutual carrier
+
+**Best for:**
+- IBC users
+- Real estate investors
+- High cash-flow individuals
+- Business owners
+
+### B. Blended Policies
+Use term riders to increase MEC limits while keeping costs low.
+
+### C. Paid-Up Additions Rider
+Critical for:
+- Front-loaded cash value
+- Larger dividends
+- Higher long-term compounding
+
+## 7. Use Cases
+
+### A. Wealth Storage
+Stable alternative to:
+- Bonds
+- CDs
+- High-yield savings
+- Volatile markets
+
+### B. Retirement Income
+Withdrawals to basis + policy loans for tax-free income.
+
+### C. Intergenerational Wealth
+Whole life multiplies legacy via:
+- Guaranteed death benefit
+- Tax-free transfer
+
+### D. Business Uses
+- Key person insurance
+- Executive bonus plans
+- Buy-sell funding
+- Liquidity buffer
+
+### E. Real Estate & IBC
+- Down payments
+- BRRRR recycling capital
+- Cash-flow smoothing
+
+### F. Emergency Fund Alternative
+Policies are liquid, tax-favored, and protected.
+
+## 8. Whole Life vs Other Products
+
+| Feature | Whole Life | Term | VUL/VUL | IUL |
+|---------|-----------|------|---------|-----|
+| Market Exposure | No | No | Yes | Yes (indirect) |
+| Cash Value | Yes | No | Yes | Yes |
+| Guarantees | Strong | Limited | Limited | Limited |
+| Level Premiums | Yes | Yes | No | No |
+| Lifetime Coverage | Yes | No | Potentially | Potentially |
+| Complexity | Low | Low | High | High |
+
+**Whole life is simplest, most stable, and most predictable.**
+
+## 9. Ideal Candidates for Whole Life
+
+- High-income earners
+- People needing stable, long-term wealth storage
+- Clients seeking guaranteed legacy
+- Individuals concerned about market risk
+- People wanting tax-efficient retirement income
+- Families planning intergenerational wealth
+- Business owners needing flexible capital
+
+## 10. Optimal Funding Strategy
+
+### A. Aim for a premium that's meaningful but safe
+A whole life policy must be funded long-term.
+
+### B. Use PUAs to accelerate growth
+PUAs transform whole life from "slow" to "efficient."
+
+### C. Keep a liquidity buffer outside the policy
+**General guidance:**
+- 3–6 months liquid in a bank
+- Everything above that: evaluate whole life
+
+## 11. Lifetime Financial Impact
+
+Well-designed whole life provides:
+- Permanent safety net
+- Predictable wealth base
+- Tax-efficiency
+- Long-term compounding
+- Legacy creation
+- Multi-purpose liquidity
+
+Over 20–40 years, the compounding effect becomes enormous due to:
+- Guaranteed growth
+- Dividends
+- Paid-up additions
+- Policy loans used strategically
+
+## 12. Summary
+
+Whole life is the most stable, predictable financial instrument in life insurance, offering:
+- ✓ Permanent death benefit
+- ✓ Guaranteed accumulation
+- ✓ Uninterrupted compounding
+- ✓ Tax-favored access
+- ✓ Multi-use liquidity
+- ✓ Strong long-term and generational impact
+
+**It is the foundation product of long-term financial planning and the backbone of systems like Infinite Banking.**`,
         keyPoints: [
           'Lifetime coverage guaranteed',
           'Cash value grows tax-deferred',
