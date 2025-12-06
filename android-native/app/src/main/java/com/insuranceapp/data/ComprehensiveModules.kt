@@ -22,6 +22,8 @@ val comprehensiveModules = listOf(
             Lesson(
                 id = "fixed-annuities-1",
                 title = "Core Definition & Structure",
+                videoUrl = "https://youtu.be/YwhInV2CCNI",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Fixed Annuities — Core Definition
 
@@ -303,6 +305,8 @@ Especially for individuals catching up on retirement planning.
             Lesson(
                 id = "fia-1",
                 title = "What Are Fixed Indexed Annuities?",
+                videoUrl = "https://youtu.be/2o9oyNFUVjM",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Fixed Indexed Annuities (FIAs)
 

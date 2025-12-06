@@ -22,6 +22,8 @@ val protectionModules = listOf(
             Lesson(
                 id = "income-protection-1",
                 title = "Why Income Protection Matters Most",
+                videoUrl = "https://youtu.be/dAjIWUl8X70",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Income Protection — The Foundation
 
@@ -277,6 +279,8 @@ Cover enough to maintain:
             Lesson(
                 id = "mortgage-protection-1",
                 title = "What Is Mortgage Protection?",
+                videoUrl = "https://youtu.be/gFsXIHuCkrg",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Mortgage Protection Insurance
 
@@ -466,6 +470,8 @@ Most advisors recommend:
             Lesson(
                 id = "final-expense-1",
                 title = "What Is Final Expense Insurance?",
+                videoUrl = "https://youtu.be/hjrUlQTbSuE",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Final Expense Insurance
 **Also called burial insurance or senior whole life**
@@ -816,6 +822,8 @@ Trusts and wills can direct:
             Lesson(
                 id = "universal-life-1",
                 title = "What Is Universal Life Insurance?",
+                videoUrl = "https://youtu.be/OEE03D_3_Yk",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Universal Life (UL) Insurance
 

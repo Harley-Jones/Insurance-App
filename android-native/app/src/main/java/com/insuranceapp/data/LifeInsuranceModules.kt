@@ -22,6 +22,8 @@ val lifeInsuranceModules = listOf(
             Lesson(
                 id = "term-life-1",
                 title = "Core Structure & Key Features",
+                videoUrl = "https://youtu.be/XwBpW7XsiHo",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Term Life Insurance — Foundation
 
