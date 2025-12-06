@@ -63,9 +63,71 @@ export const modules: Module[] = [
     lessons: [
       {
         id: 'whole-1',
-        title: 'Understanding Whole Life',
-        content: 'Whole life insurance provides lifetime coverage with a guaranteed death benefit and cash value that grows tax-deferred. Premiums remain level for life.',
-        keyPoints: ['Lifetime coverage', 'Guaranteed cash value', 'Fixed premiums', 'Tax-deferred growth'],
+        title: 'Understanding Whole Life Insurance',
+        content: `## What is Whole Life Insurance?
+
+Whole life insurance is a type of permanent life insurance that provides coverage for your entire lifetime. Unlike term life insurance which expires after a set period, whole life insurance remains in force as long as you pay your premiums.
+
+### Key Features of Whole Life Insurance
+
+**1. Lifetime Coverage**
+- Coverage lasts your entire life (to age 100-121 depending on the policy)
+- Death benefit is guaranteed as long as premiums are paid
+- Your beneficiaries receive the death benefit regardless of when you pass away
+
+**2. Cash Value Component**
+- A portion of every premium payment goes into a cash value account
+- Cash value grows tax-deferred at a guaranteed rate
+- You own this cash value and can access it through loans or withdrawals
+- Cash value grows slowly at first but accelerates over time
+
+**3. Fixed, Level Premiums**
+- Your premium never increases throughout your life
+- Provides predictability in your financial planning
+- Locked in at your age when you purchase the policy
+- Younger purchasers get lower lifetime premiums
+
+**4. Guaranteed Death Benefit**
+- The death benefit amount is guaranteed and will not decrease
+- Your beneficiaries receive the full death benefit income tax-free
+- Provides certainty and peace of mind for legacy planning
+
+### How Whole Life Insurance Works
+
+When you pay your whole life insurance premium, the insurance company divides it into three main components:
+
+1. **Cost of Insurance**: Covers the death benefit protection
+2. **Cash Value**: Builds your savings component
+3. **Company Expenses**: Administrative costs and agent commissions
+
+Over time, as your cash value grows, it helps offset the increasing cost of insurance as you age, which is why your premiums remain level.
+
+### Tax Advantages
+
+Whole life insurance offers several tax benefits:
+
+- **Tax-Deferred Growth**: Cash value grows without annual taxation
+- **Tax-Free Death Benefit**: Beneficiaries receive proceeds income tax-free
+- **Tax-Free Policy Loans**: Borrow against cash value without triggering taxes
+- **No Required Distributions**: Unlike retirement accounts, no forced withdrawals
+
+### Common Uses for Whole Life Insurance
+
+**Legacy Planning**: Guarantee inheritance for your heirs
+**Estate Taxes**: Provide liquidity to pay estate taxes
+**Infinite Banking**: Use cash value as your own personal bank
+**Retirement Income**: Supplement retirement through policy loans
+**Business Planning**: Fund buy-sell agreements, key person insurance
+**Charitable Giving**: Name charity as beneficiary for tax-efficient giving`,
+        keyPoints: [
+          'Lifetime coverage guaranteed',
+          'Cash value grows tax-deferred',
+          'Fixed premiums never increase',
+          'Tax-free death benefit',
+          'Borrow against cash value',
+          'Dividends from mutual companies',
+          'Foundation of wealth building'
+        ],
         videoUrl: 'https://www.youtube.com/watch?v=Dv5FqJOqEqA',
         videoType: 'youtube',
         transcript: 'Whole life insurance is a powerful financial tool that provides both protection and wealth accumulation. Unlike term insurance, whole life is permanent - it covers you for your entire lifetime as long as premiums are paid.\n\nOne of the key features of whole life insurance is the cash value component. A portion of your premium goes into a cash value account that grows tax-deferred at a guaranteed rate. This cash value becomes a living benefit you can access through loans or withdrawals.\n\nWhole life premiums are fixed and never increase, providing predictability in your financial planning. The death benefit is also guaranteed, giving your beneficiaries certainty.\n\nMany people use whole life insurance as the foundation of their financial plan because it combines protection with guaranteed growth, creating a stable asset that can be used for retirement income, emergency funds, or legacy planning.',
