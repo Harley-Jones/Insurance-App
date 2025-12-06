@@ -254,6 +254,8 @@ Some dishonest salespeople:
       {
         id: 'commission-ethics',
         title: 'Understanding Commission Structures & Conflicts',
+        videoUrl: 'https://www.youtube.com/watch?v=hWQiXv0sn9Y',
+        videoType: 'youtube',
         content: `## How Commissions Can Create Conflicts of Interest
 
 ### Commission Basics
