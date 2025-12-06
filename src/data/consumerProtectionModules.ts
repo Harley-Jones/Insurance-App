@@ -16,6 +16,8 @@ export const consumerProtectionModules: Module[] = [
       {
         id: 'red-flags',
         title: 'Red Flags: Manipulative Sales Tactics',
+        videoUrl: 'https://www.youtube.com/watch?v=sVi-2-0RaEc',
+        videoType: 'youtube',
         content: `## Recognizing Manipulative Sales Tactics
 
 ### High-Pressure Tactics
@@ -84,6 +86,8 @@ export const consumerProtectionModules: Module[] = [
       {
         id: 'green-flags',
         title: 'Green Flags: Signs of an Ethical Advisor',
+        videoUrl: 'https://www.youtube.com/watch?v=gvZSpET11ZY',
+        videoType: 'youtube',
         content: `## Identifying Trustworthy Financial Advisors
 
 ### Key Characteristics of Ethical Advisors
@@ -164,6 +168,8 @@ Ethical advisors are building careers, not making quick sales. They:
       {
         id: 'verification',
         title: 'Verifying Credentials & Checking Backgrounds',
+        videoUrl: 'https://www.youtube.com/watch?v=c_SflXzCGYE',
+        videoType: 'youtube',
         content: `## How to Verify Your Advisor's Credentials
 
 ### Essential Verification Steps
