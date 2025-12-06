@@ -24,39 +24,14 @@ export default function Hero({ overallProgress, completedModules, totalModules }
 
   return (
     <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white overflow-hidden min-h-[600px] sm:min-h-[700px] md:min-h-[800px]">
-      {/* Video Background */}
-      <div className="absolute inset-0 opacity-30">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
+          alt="Financial Freedom"
           className="w-full h-full object-cover"
-          style={{ minHeight: '100%', minWidth: '100%' }}
-        >
-          <source src="/videos/three-hours-30-years.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
-          <img
-            src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
-            alt="Financial Freedom"
-            className="w-full h-full object-cover"
-          />
-        </video>
+        />
       </div>
-
-      {/* Mute/Unmute Button - Responsive sizing */}
-      <button
-        onClick={toggleMute}
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-3 transition-all duration-200 group"
-        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-      >
-        {isMuted ? (
-          <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-        ) : (
-          <Volume2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-        )}
-      </button>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
