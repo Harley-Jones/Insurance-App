@@ -344,6 +344,8 @@ Some advisors work fee-only (no commissions):
       {
         id: 'your-rights',
         title: 'Your Rights & How to File Complaints',
+        videoUrl: 'https://www.youtube.com/watch?v=zJBzJQ0XBZY',
+        videoType: 'youtube',
         content: `## Protecting Yourself: Know Your Rights
 
 ### Your Consumer Rights
@@ -422,6 +424,13 @@ If you've suffered financial harm:
 
 Remember: You have power as a consumer. Don't be afraid to speak up!`,
         duration: 8,
+        keyPoints: [
+          'Know your rights: information, privacy, free look period, and fair treatment',
+          'File complaints with your state Insurance Department for violations',
+          'Document everything: communications, dates, and signed documents',
+          'Use FINRA, NAIC, and BBB for additional complaint channels',
+          'Legal options available if you\'ve suffered financial harm'
+        ],
         quiz: {
           questions: [
             {
