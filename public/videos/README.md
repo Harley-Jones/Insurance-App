@@ -2,7 +2,27 @@
 
 Place your MP4 video files here for offline access.
 
-## File Naming Convention
+## Required Video for Hero Header
+
+**IMPORTANT**: The home page video header requires a specific video file:
+
+- **File name**: `three-hours-30-years.mp4`
+- **Location**: Place directly in this folder (`public/videos/`)
+- **Requirements**:
+  - Format: MP4 (H.264 codec)
+  - The video will autoplay muted on the home page
+  - Users can unmute via the button in the top-right corner
+  - Video loops continuously
+
+**How to add the video:**
+1. Rename your video file to exactly: `three-hours-30-years.mp4`
+2. Copy it to: `public/videos/three-hours-30-years.mp4`
+3. Rebuild the app: `npm run build`
+4. For Android/iOS: Sync and rebuild native projects
+
+**Note**: If the video file is not found, the app will gracefully fall back to a background image.
+
+## File Naming Convention for Module Videos
 
 Use descriptive names that match your module structure:
 - `module1-lesson1.mp4`

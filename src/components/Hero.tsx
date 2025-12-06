@@ -24,14 +24,42 @@ export default function Hero({ overallProgress, completedModules, totalModules }
 
   return (
     <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white overflow-hidden min-h-[600px] sm:min-h-[700px] md:min-h-[800px]">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Video Background */}
+      <div className="absolute inset-0 opacity-30">
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={(e) => {
+            // Fallback to background image if video fails to load
+            console.log('Video failed to load, using background image fallback');
+          }}
+        >
+          <source src="/videos/three-hours-30-years.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback Background Image */}
         <img
           src="https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050198697_45624597.webp"
           alt="Financial Freedom"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover absolute inset-0 -z-10"
         />
       </div>
+
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 sm:p-4 transition-all duration-200 hover:scale-110"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? (
+          <VolumeX className="w-5 h-5 sm:w-6 sm:h-6" />
+        ) : (
+          <Volume2 className="w-5 h-5 sm:w-6 sm:h-6" />
+        )}
+      </button>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
