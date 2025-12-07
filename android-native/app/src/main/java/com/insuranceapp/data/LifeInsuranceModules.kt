@@ -296,6 +296,8 @@ Term life insurance is:
             Lesson(
                 id = "whole-life-1",
                 title = "Core Structure & Components",
+                videoUrl = "https://youtu.be/TSzDJcO58NA",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Whole Life Insurance — Foundation
 
