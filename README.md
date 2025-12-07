@@ -1,135 +1,112 @@
-# Life Insurance Education Platform
+# Insurance Education App - Native Android
 
-A comprehensive educational platform for learning about life insurance products, featuring gamification, interactive calculators, and offline video support.
+A comprehensive financial education application built with Jetpack Compose, featuring professional insurance and wealth-building content.
 
-## Features
+## 🎯 What's Inside
 
-- 📚 **Comprehensive Training Modules** - Term, Whole, Universal, Variable, and Indexed Universal Life
-- 🎮 **Gamification System** - Points, badges, achievements, and leaderboards
-- 📱 **Mobile-Ready** - Built with Capacitor for iOS and Android
-- 🎥 **Offline Video Support** - Bundle videos natively for airplane mode access
-- 🧮 **Interactive Calculators** - Cash value, policy loans, and wealth recapture
-- 📊 **Progress Tracking** - Track completion and resume where you left off
-- 🏆 **Certificates** - Downloadable completion certificates
-- 🌐 **State Insurance Directory** - Contact information for all 50 states
+**14 Comprehensive Modules | 51 Lessons | 755 Minutes of Content**
 
-## Offline Video Setup
+### Educational Modules:
+- Consumer Protection & Ethical Advisors
+- Fixed Annuities - Complete Guide
+- Indexed Annuities (FIA) - Deep Dive
+- Income Protection Insurance
+- Mortgage Protection
+- Final Expense Insurance
+- Living Trust & Will Services
+- Universal Life Insurance
+- Term Life Insurance - Complete Guide
+- Whole Life Insurance - Full Deep Dive
+- Infinite Banking Concept (IBC)
+- Indexed Universal Life (IUL) - Deep Dive
+- **G.R.I.P.** - Government Restrictions Inhibiting Prosperity (5 lessons including podcast)
+- **Variable Universal Life (VUL)** - Complete Deep Dive
 
-This app supports **complete offline video playback**. Videos can be bundled directly into the native iOS and Android apps, allowing users to watch content even in airplane mode with no internet connection.
+## 🚀 Technology Stack
 
-### Quick Start for Offline Videos
+- **Jetpack Compose** - Modern declarative UI framework
+- **Material Design 3** - Latest Material Design guidelines
+- **ExoPlayer (Media3)** - Advanced video playback
+- **Kotlin** - Primary programming language
+- **Navigation Compose** - Type-safe navigation
+- **Coil** - Image loading library
 
-1. Place your MP4 video files in `public/videos/` folder
-2. Update module files to reference local videos:
-   ```typescript
-   videoUrl: '/videos/your-video.mp4',
-   videoType: 'mp4'
-   ```
-3. Build and sync: `npm run build && npx cap sync`
+## 🎨 Features
 
-See **[OFFLINE_VIDEO_GUIDE.md](OFFLINE_VIDEO_GUIDE.md)** for complete instructions.
+- ✅ **Beautiful Animations** - Glassmorphism, mesh gradients, spring physics
+- ✅ **Video Integration** - 15 YouTube videos + podcast content
+- ✅ **Hero Video** - 32-minute introductory video
+- ✅ **Professional Content** - Thomas Sowell-quality economic analysis
+- ✅ **Advanced Topics** - GRIP policy analysis, VUL deep dive
+- ✅ **Tax Optimization Strategies** - Real-world wealth-building implementation
 
-
-- **State Management**: React Context API
-- **Mobile**: Capacitor 6 (iOS & Android)
-
-## 📱 Platform Support
-
-This is a **React web application** that uses Capacitor to create native mobile apps:
-- ✅ Web (Progressive Web App)
-- ✅ iOS (via Capacitor)
-- ✅ Android (via Capacitor)
-
-**Note**: This is NOT React Native. It's a web app wrapped in a native container.
-
-## 🛠️ Development
+## 🔨 Building the App
 
 ### Prerequisites
-- Node.js 18 or higher
-- npm or yarn
+- Android Studio (latest version)
+- JDK 17 or higher
+- Android SDK (API 34)
 
-### Installation
+### Build Steps
+
+1. **Open in Android Studio**
+   ```
+   File → Open → Select /android-native directory
+   ```
+
+2. **Let Android Studio generate Gradle wrapper**
+   - It will automatically detect and set up the project
+   - Wait for Gradle sync to complete
+
+3. **Build the App**
+   - Click the green Run button (▶️) to build and run
+   - Or: Build → Build Bundle(s) / APK(s) → Build APK(s)
+
+### Command Line Build
+
 ```bash
-npm install
+cd android-native
+
+# Build debug APK
+./gradlew assembleDebug
+
+# Build release APK
+./gradlew assembleRelease
+
+# Install on connected device
+./gradlew installDebug
 ```
 
-### Development Server
-```bash
-npm run dev
+## 📱 APK Location
+
+After building, find the APK at:
 ```
-Opens at http://localhost:8080
-
-### Build for Production
-```bash
-npm run build
-```
-Output: `dist/` directory
-
-## 📦 Building Native Apps
-
-### Using Ionic Dashboard (Recommended)
-1. Push code to your Git repository
-2. Connect repository to Ionic Dashboard
-3. Configure build settings:
-   - Build Command: `npm run ionic:build`
-   - Build Directory: `dist`
-4. Trigger builds for iOS and Android
-
-See [CAPACITOR_BUILD_GUIDE.md](./CAPACITOR_BUILD_GUIDE.md) for detailed instructions.
-
-### Local Native Development
-```bash
-# Build web assets
-npm run build
-
-# Add platforms (first time only)
-npx cap add ios
-npx cap add android
-
-# Sync changes
-npx cap sync
-
-# Open in native IDE
-npx cap open ios
-npx cap open android
+android-native/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-## 📚 Features
+## 🎥 Video Content
 
-- **Interactive Learning Modules**: 20+ comprehensive lessons
-- **Video Integration**: Support for embedded educational videos
-- **Gamification**: Points, badges, achievements, leaderboards
-- **Calculators**: Cash value, policy loans, wealth recapture
-- **Progress Tracking**: Save progress locally
-- **Certificates**: Generate completion certificates
-- **State Insurance Directory**: 50-state insurance department contacts
-- **Glossary**: 100+ insurance terms
-- **Downloadable Resources**: PDF guides and worksheets
+### Hero Video
+32-minute introduction: https://youtu.be/WcHV0hVkfTM
 
-## 🎯 Project Structure
+### Module Videos
+All 14 modules have professional YouTube video content integrated.
 
-```
-src/
-├── components/        # React components
-├── contexts/         # Context providers
-├── data/            # Module content and data
-├── pages/           # Route pages
-├── types/           # TypeScript types
-├── utils/           # Helper functions
-└── hooks/           # Custom React hooks
-```
+### GRIP Podcast
+Hour-long deep dive analysis: https://youtu.be/RhwNUjmII0c
 
-## 🔧 Configuration Files
+## 🎓 Educational Highlights
 
-- `capacitor.config.ts` - Capacitor configuration
-- `ionic.config.json` - Ionic Dashboard integration
-- `vite.config.ts` - Vite build configuration
-- `tailwind.config.ts` - Tailwind CSS configuration
+### GRIP Module (150 minutes)
+Government Restrictions Inhibiting Prosperity - comprehensive analysis featuring Thomas Sowell's economic philosophy, tax burden analysis, welfare dependency economics, and wealth-building strategies.
+
+### VUL Module (60 minutes)
+Variable Universal Life Insurance deep dive covering market-exposed cash value mechanics, risk analysis, and strategic use cases.
 
 ## 📄 License
 
-Private - All rights reserved
+All educational content is proprietary.
 
-## 🤝 Support
+---
 
-For build issues or questions, see [CAPACITOR_BUILD_GUIDE.md](./CAPACITOR_BUILD_GUIDE.md)
+**Built with ❤️ using Jetpack Compose and Material Design 3**
