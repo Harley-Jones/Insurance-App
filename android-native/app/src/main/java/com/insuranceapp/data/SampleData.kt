@@ -42,4 +42,4 @@ val sampleModules = listOf(
             )
         )
     )
-) + comprehensiveModules + protectionModules + lifeInsuranceModules
+) + comprehensiveModules + protectionModules + lifeInsuranceModules + gripModule + vulModule
