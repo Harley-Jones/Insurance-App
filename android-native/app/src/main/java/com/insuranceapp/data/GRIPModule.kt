@@ -13,7 +13,7 @@ val gripModule = Module(
     image = "https://d64gsuwffb70l.cloudfront.net/692544d3604a8db1b42ad640_1764050200456_e62d7b22.webp",
     color = "bg-red-700",
     icon = "⚖️",
-    estimatedTime = "90 min",
+    estimatedTime = "150 min",
     difficulty = "Advanced",
     lessons = listOf(
 
@@ -848,6 +848,179 @@ Legitimate functions justify some taxation/regulation:
                 "TCJA expiration 2026: Middle-class tax increase of 49%",
                 "Old-age dependency ratio increasing: Fewer workers per retiree",
                 "Sowell: Economic freedom requires defending against government overreach"
+            )
+        ),
+
+        Lesson(
+            id = "grip-5",
+            title = "GRIP Complete Analysis — Deep Dive Podcast",
+            videoUrl = "https://youtu.be/RhwNUjmII0c",
+            videoType = VideoType.YOUTUBE,
+            content = """
+# G.R.I.P. Complete Analysis — Podcast Deep Dive
+
+## Hour-Long Comprehensive Breakdown
+
+This extended podcast-format discussion provides:
+
+**Comprehensive Coverage:**
+- Detailed examination of all G.R.I.P. mechanisms
+- Real-world examples and case studies
+- Q&A format addressing common questions
+- Practical implementation strategies
+
+**Topics Explored:**
+- Tax burden mathematical analysis
+- Regulatory capture and institutional interests
+- Welfare dependency economics
+- Information asymmetry in financial services
+- Thomas Sowell's economic philosophy
+- Historical context and future projections
+- Step-by-step wealth-building strategies
+
+**Format:**
+This audio presentation offers an alternative learning format for:
+- Commuters and travelers
+- Audio-preferring learners
+- Comprehensive review of all G.R.I.P. concepts
+- Deep-dive discussion beyond written content
+
+---
+
+## Key Discussion Points
+
+### Tax System Analysis
+Detailed breakdown of how multiple taxation layers compound to create 60-70% lifetime wealth extraction
+
+### The Benefit Cliff Problem
+Real-world scenarios showing 100%+ effective marginal tax rates trapping families in dependency
+
+### Alternative Wealth Strategies
+Comprehensive walkthrough of:
+- Cash value life insurance optimization
+- Real estate tax advantages
+- Business ownership strategies
+- Geographic arbitrage implementation
+- Roth conversion timing
+
+### Political Economy
+Understanding who benefits from G.R.I.P.:
+- Government bureaucracy expansion
+- Financial services industry fee extraction
+- Welfare-industrial complex perpetuation
+
+### Historical Context
+How we arrived at current system:
+- Pre-income tax era (before 1913)
+- New Deal and Social Security (1935)
+- Great Society expansion (1964-1968)
+- Modern tax code complexity
+
+### Future Projections
+What's coming:
+- TCJA expiration (2026) - tax increases
+- Social Security insolvency (2033)
+- Medicare funding crisis (2031)
+- Demographic dependency ratio shifts
+
+---
+
+## Optimal Use
+
+**Listen to this podcast lesson:**
+- After completing Lessons 1-4 for comprehensive review
+- During commute or travel time
+- As reinforcement of key concepts
+- To hear discussion format vs. reading format
+
+**Duration:** Approximately 60 minutes
+
+**Recommended:** Take notes on action items and strategies most relevant to your situation
+
+---
+
+## Thomas Sowell's Economic Philosophy
+
+This discussion integrates Sowell's key insights:
+
+*"The most basic question is not what is best, but who shall decide what is best."*
+
+*"It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong."*
+
+*"Freedom has cost too much blood and agony to be relinquished at the cheap price of rhetoric."*
+
+---
+
+## Action Steps
+
+After completing this comprehensive analysis:
+
+1. **Assess Your Situation:**
+   - Calculate your current total tax burden
+   - Identify benefit cliffs if applicable
+   - Evaluate current financial product allocations
+
+2. **Identify Opportunities:**
+   - Tax optimization strategies relevant to your income level
+   - Alternative wealth vehicles you're not utilizing
+   - Geographic arbitrage potential
+
+3. **Create Implementation Plan:**
+   - Prioritize highest-impact strategies
+   - Consult qualified professionals where needed
+   - Establish timeline for implementation
+
+4. **Monitor and Adjust:**
+   - Track tax law changes
+   - Adjust strategy as income/life situation changes
+   - Stay informed on policy developments
+
+---
+
+## The Path to Financial Freedom
+
+Understanding G.R.I.P. is the first step.
+
+**Implementation is the second step.**
+
+**Sustained discipline is the third step.**
+
+Economic freedom requires:
+- Knowledge (you now have this)
+- Strategy (lessons provided the framework)
+- Action (your responsibility)
+- Persistence (long-term commitment)
+
+The wealth-building strategies discussed work, but only if implemented consistently over decades.
+
+---
+
+## Conclusion
+
+This comprehensive podcast breakdown ties together all G.R.I.P. concepts into a cohesive understanding of:
+
+**The Problem:**
+Government restrictions inhibiting prosperity through taxation, regulation, dependency programs, and information control
+
+**The Solution:**
+Legal tax minimization, strategic use of alternative wealth vehicles, geographic optimization, and political engagement
+
+**The Philosophy:**
+Economic freedom as a fundamental right worth defending and preserving
+
+*"Anyone may arrange his affairs so that his taxes shall be as low as possible; he is not bound to choose that pattern which best pays the treasury."*
+— Judge Learned Hand, Gregory v. Helvering (1934)
+
+**Take action. Build wealth. Preserve freedom.**
+            """.trimIndent(),
+            duration = 60,
+            keyPoints = listOf(
+                "Hour-long comprehensive discussion of all G.R.I.P. concepts",
+                "Audio format ideal for commuters and audio learners",
+                "Integrates all lessons: tax analysis, welfare traps, strategies, history",
+                "Practical implementation guidance and action steps",
+                "Thomas Sowell's economic philosophy woven throughout",
+                "Covers future projections: TCJA 2026, Social Security 2033, Medicare 2031"
             )
         )
     )
