@@ -35,9 +35,9 @@ class MainActivity : ComponentActivity() {
                             streak = 7
                         ),
                         modules = sampleModules,
-                        videoUrl = "android.resource://$packageName/${R.raw.hero_video}"
-                        // Note: Place your video file in app/src/main/res/raw/hero_video.mp4
-                        // Or use a URL: "https://example.com/video.mp4"
+                        videoUrl = "https://youtu.be/WcHV0hVkfTM"  // 32-minute hero video
+                        // Alternative: Use local file (place in app/src/main/res/raw/hero_video.mp4)
+                        // videoUrl = "android.resource://$packageName/${R.raw.hero_video}"
                     )
                 }
             }

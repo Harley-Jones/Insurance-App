@@ -21,6 +21,8 @@ val sampleModules = listOf(
             Lesson(
                 id = "red-flags",
                 title = "Red Flags: Manipulative Sales Tactics",
+                videoUrl = "https://youtu.be/7hMfn1gw31g",
+                videoType = VideoType.YOUTUBE,
                 content = """
                     Learn to recognize and avoid manipulative sales tactics in the financial industry.
 
@@ -30,8 +32,6 @@ val sampleModules = listOf(
                     Watch for dark psychology principles: reciprocity manipulation, social proof abuse,
                     scarcity tactics, and authority exploitation.
                 """.trimIndent(),
-                videoUrl = "https://www.youtube.com/watch?v=sVi-2-0RaEc",
-                videoType = VideoType.YOUTUBE,
                 duration = 12,
                 keyPoints = listOf(
                     "Artificial urgency is a red flag",
