@@ -588,6 +588,8 @@ Perfect for:
             Lesson(
                 id = "estate-planning-1",
                 title = "Wills vs Trusts — Core Definitions",
+                videoUrl = "https://youtu.be/-dQYUjsx9q8",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Estate Planning Fundamentals
 

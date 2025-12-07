@@ -616,6 +616,8 @@ Over 20-40 years, the compounding effect becomes **enormous** due to:
             Lesson(
                 id = "ibc-deep-1",
                 title = "Core Concept & Advantages",
+                videoUrl = "https://youtu.be/HXGAHrFzpd0",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Infinite Banking Concept (IBC)
 
@@ -979,6 +981,8 @@ Most powerful when:
             Lesson(
                 id = "iul-1",
                 title = "Core Structure & How It Works",
+                videoUrl = "https://youtu.be/8x229HAKaG0",
+                videoType = VideoType.YOUTUBE,
                 content = """
 # Indexed Universal Life (IUL)
 
