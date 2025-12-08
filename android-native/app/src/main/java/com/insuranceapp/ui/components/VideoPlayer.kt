@@ -1,6 +1,10 @@
 package com.insuranceapp.ui.components
 
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -21,11 +25,142 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 
 /**
- * ExoPlayer video component with controls
- * Supports local MP4 files and streaming URLs
+ * Universal video player that supports both YouTube URLs and direct video files
  */
 @Composable
 fun VideoPlayer(
+    videoUrl: String,
+    modifier: Modifier = Modifier,
+    autoPlay: Boolean = false,
+    loop: Boolean = false,
+    showControls: Boolean = true,
+    isMuted: Boolean = false,
+    onMuteToggle: (() -> Unit)? = null
+) {
+    val isYouTubeUrl = videoUrl.contains("youtube.com") || videoUrl.contains("youtu.be")
+
+    if (isYouTubeUrl) {
+        YouTubePlayer(
+            videoUrl = videoUrl,
+            modifier = modifier,
+            autoPlay = autoPlay,
+            loop = loop,
+            isMuted = isMuted,
+            showControls = showControls
+        )
+    } else {
+        ExoPlayerVideo(
+            videoUrl = videoUrl,
+            modifier = modifier,
+            autoPlay = autoPlay,
+            loop = loop,
+            showControls = showControls,
+            isMuted = isMuted,
+            onMuteToggle = onMuteToggle
+        )
+    }
+}
+
+/**
+ * YouTube video player using WebView
+ */
+@Composable
+private fun YouTubePlayer(
+    videoUrl: String,
+    modifier: Modifier = Modifier,
+    autoPlay: Boolean = false,
+    loop: Boolean = false,
+    isMuted: Boolean = false,
+    showControls: Boolean = true
+) {
+    val videoId = remember(videoUrl) {
+        extractYouTubeId(videoUrl)
+    }
+
+    val autoPlayParam = if (autoPlay) "1" else "0"
+    val loopParam = if (loop) "1" else "0"
+    val mutedParam = if (isMuted) "1" else "0"
+    val controlsParam = if (showControls) "1" else "0"
+
+    val html = remember(videoId, autoPlayParam, loopParam, mutedParam, controlsParam) {
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                * { margin: 0; padding: 0; }
+                body { background: #000; }
+                .video-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/$videoId?autoplay=$autoPlayParam&loop=$loopParam&mute=$mutedParam&controls=$controlsParam&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </body>
+        </html>
+        """.trimIndent()
+    }
+
+    AndroidView(
+        factory = { context ->
+            WebView(context).apply {
+                layoutParams = FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                )
+
+                settings.apply {
+                    javaScriptEnabled = true
+                    mediaPlaybackRequiresUserGesture = !autoPlay
+                    domStorageEnabled = true
+                    loadWithOverviewMode = true
+                    useWideViewPort = true
+                    builtInZoomControls = false
+                    displayZoomControls = false
+                    setSupportZoom(false)
+                    cacheMode = WebSettings.LOAD_DEFAULT
+                }
+
+                webViewClient = WebViewClient()
+                webChromeClient = WebChromeClient()
+
+                loadDataWithBaseURL(
+                    "https://www.youtube.com",
+                    html,
+                    "text/html",
+                    "UTF-8",
+                    null
+                )
+            }
+        },
+        modifier = modifier.background(Color.Black)
+    )
+}
+
+/**
+ * ExoPlayer for direct video files (MP4, etc.)
+ */
+@Composable
+private fun ExoPlayerVideo(
     videoUrl: String,
     modifier: Modifier = Modifier,
     autoPlay: Boolean = false,
@@ -104,6 +239,24 @@ fun VideoPlayer(
                 )
             }
         }
+    }
+}
+
+/**
+ * Extract YouTube video ID from various URL formats
+ */
+private fun extractYouTubeId(url: String): String {
+    return when {
+        url.contains("youtu.be/") -> {
+            url.substringAfter("youtu.be/").substringBefore("?")
+        }
+        url.contains("youtube.com/watch?v=") -> {
+            url.substringAfter("v=").substringBefore("&")
+        }
+        url.contains("youtube.com/embed/") -> {
+            url.substringAfter("embed/").substringBefore("?")
+        }
+        else -> url
     }
 }
 

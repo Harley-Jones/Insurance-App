@@ -28,7 +28,12 @@ val Gray50 = Color(0xFFF9FAFB)
 val Gray100 = Color(0xFFF3F4F6)
 val Gray200 = Color(0xFFE5E7EB)
 val Gray700 = Color(0xFF374151)
+val Gray800 = Color(0xFF1F2937)
 val Gray900 = Color(0xFF111827)
+
+// Additional brand colors for better contrast
+val Blue50 = Color(0xFFEFF6FF)
+val Purple200 = Color(0xFFDDD6FE)
 
 // Status colors
 val Success = Color(0xFF10B981)
