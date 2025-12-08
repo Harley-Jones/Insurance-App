@@ -33,3 +33,30 @@ android/
 .env
 .env.local
 .env.production
+
+# Android build artifacts
+android-native/build/
+android-native/app/build/
+android-native/.gradle/
+android-native/local.properties
+android-native/*.apk
+android-native/*.aab
+android-native/.cxx/
+*.apk
+*.aab
+
+# Video files (use YouTube/CDN URLs instead)
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.3gp
+
+# Android specific
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
