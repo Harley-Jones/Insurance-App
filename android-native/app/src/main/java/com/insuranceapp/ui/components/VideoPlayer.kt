@@ -1,8 +1,10 @@
 package com.insuranceapp.ui.components
 
-import android.content.Intent
-import android.net.Uri
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,13 +28,10 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
-import coil.compose.AsyncImage
 import com.insuranceapp.ui.theme.*
 
 /**
  * Universal video player that supports both YouTube URLs and direct video files
- * For YouTube: Opens in YouTube app or browser with one click
- * For MP4s: Uses ExoPlayer for in-app playback
  */
 @Composable
 fun VideoPlayer(
@@ -47,9 +46,11 @@ fun VideoPlayer(
     val isYouTubeUrl = videoUrl.contains("youtube.com") || videoUrl.contains("youtu.be")
 
     if (isYouTubeUrl) {
-        YouTubeVideoCard(
+        YouTubePlayer(
             videoUrl = videoUrl,
-            modifier = modifier
+            modifier = modifier,
+            autoPlay = autoPlay,
+            showControls = showControls
         )
     } else {
         ExoPlayerVideo(
@@ -65,105 +66,159 @@ fun VideoPlayer(
 }
 
 /**
- * YouTube video card that opens video in YouTube app/browser
- * Shows thumbnail with big play button - GUARANTEED to work!
+ * In-app YouTube player using WebView
+ * Click the video to start playback
  */
 @Composable
-private fun YouTubeVideoCard(
+private fun YouTubePlayer(
     videoUrl: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    autoPlay: Boolean = false,
+    showControls: Boolean = true
 ) {
-    val context = LocalContext.current
     val videoId = remember(videoUrl) { extractYouTubeId(videoUrl) }
+    var hasClicked by remember { mutableStateOf(autoPlay) }
 
-    // YouTube thumbnail URL
-    val thumbnailUrl = "https://img.youtube.com/vi/$videoId/maxresdefault.jpg"
+    val controlsParam = if (showControls) "1" else "0"
 
-    Card(
-        modifier = modifier
-            .clickable {
-                // Open in YouTube app or browser
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl))
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    // Create HTML that will load on user click
+    val html = remember(videoId, controlsParam, hasClicked) {
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                * { margin: 0; padding: 0; }
+                body {
+                    background: #000;
+                    width: 100vw;
+                    height: 100vh;
+                    overflow: hidden;
+                }
+                #player-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="player-container">
+                ${if (hasClicked) """
+                <iframe
+                    src="https://www.youtube.com/embed/$videoId?autoplay=1&controls=$controlsParam&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+                """ else ""}
+            </div>
+        </body>
+        </html>
+        """.trimIndent()
+    }
 
-                // Try to open in YouTube app first
-                intent.setPackage("com.google.android.youtube")
-                try {
-                    context.startActivity(intent)
-                } catch (e: Exception) {
-                    // If YouTube app not installed, open in browser
-                    intent.setPackage(null)
-                    context.startActivity(intent)
+    Box(modifier = modifier) {
+        // WebView
+        AndroidView(
+            factory = { context ->
+                WebView(context).apply {
+                    layoutParams = FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+
+                    settings.apply {
+                        javaScriptEnabled = true
+                        mediaPlaybackRequiresUserGesture = false
+                        domStorageEnabled = true
+                        allowFileAccess = true
+                        allowContentAccess = true
+                        loadWithOverviewMode = true
+                        useWideViewPort = true
+                        setSupportZoom(false)
+                        builtInZoomControls = false
+                        displayZoomControls = false
+                        cacheMode = WebSettings.LOAD_DEFAULT
+                        mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                    }
+
+                    webViewClient = WebViewClient()
+                    webChromeClient = WebChromeClient()
+
+                    loadDataWithBaseURL(
+                        "https://www.youtube.com",
+                        html,
+                        "text/html",
+                        "UTF-8",
+                        null
+                    )
                 }
             },
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.Black
+            update = { webView ->
+                webView.loadDataWithBaseURL(
+                    "https://www.youtube.com",
+                    html,
+                    "text/html",
+                    "UTF-8",
+                    null
+                )
+            },
+            modifier = Modifier.fillMaxSize()
         )
-    ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            // Thumbnail
-            AsyncImage(
-                model = thumbnailUrl,
-                contentDescription = "Video thumbnail",
-                modifier = Modifier.fillMaxSize(),
-                contentScale = androidx.compose.ui.layout.ContentScale.Crop
-            )
 
-            // Dark overlay for better button visibility
+        // Clickable play overlay if not yet clicked
+        if (!hasClicked) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.3f))
-            )
-
-            // Big play button
-            Box(
-                modifier = Modifier
-                    .size(100.dp)
-                    .clip(CircleShape)
-                    .background(
-                        Brush.radialGradient(
-                            colors = listOf(
-                                Amber500,
-                                Orange500
-                            )
-                        )
-                    ),
+                    .background(Color.Black.copy(alpha = 0.5f))
+                    .clickable { hasClicked = true },
                 contentAlignment = Alignment.Center
             ) {
-                Icon(
-                    imageVector = Icons.Default.PlayArrow,
-                    contentDescription = "Play video",
-                    tint = Color.White,
-                    modifier = Modifier.size(60.dp)
-                )
-            }
-
-            // "Tap to play" text
-            Box(
-                modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .padding(16.dp)
-                    .clip(RoundedCornerShape(8.dp))
-                    .background(Color.Black.copy(alpha = 0.7f))
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
-            ) {
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                // Big play button
+                Box(
+                    modifier = Modifier
+                        .size(100.dp)
+                        .clip(CircleShape)
+                        .background(
+                            Brush.radialGradient(
+                                colors = listOf(
+                                    Amber500,
+                                    Orange500
+                                )
+                            )
+                        ),
+                    contentAlignment = Alignment.Center
                 ) {
                     Icon(
-                        imageVector = Icons.Default.YouTube,
-                        contentDescription = null,
-                        tint = Color(0xFFFF0000),
-                        modifier = Modifier.size(24.dp)
+                        imageVector = Icons.Default.PlayArrow,
+                        contentDescription = "Play video",
+                        tint = Color.White,
+                        modifier = Modifier.size(60.dp)
                     )
+                }
+
+                // "Tap to play" text
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .padding(16.dp)
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(Color.Black.copy(alpha = 0.7f))
+                        .padding(horizontal = 16.dp, vertical = 8.dp)
+                ) {
                     Text(
-                        text = "Tap to watch on YouTube",
+                        text = "Tap to play video",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
@@ -280,8 +335,6 @@ private fun extractYouTubeId(url: String): String {
 
 /**
  * Simplified background video player for hero sections
- * For YouTube: Shows animated thumbnail
- * For MP4: Auto-plays, loops, and muted
  */
 @Composable
 fun BackgroundVideoPlayer(
@@ -289,36 +342,19 @@ fun BackgroundVideoPlayer(
     modifier: Modifier = Modifier,
     onMuteToggle: () -> Unit = {}
 ) {
-    // For background videos, if it's YouTube just show static thumbnail
-    val isYouTubeUrl = videoUrl.contains("youtube.com") || videoUrl.contains("youtu.be")
-
-    if (isYouTubeUrl) {
-        val videoId = extractYouTubeId(videoUrl)
-        val thumbnailUrl = "https://img.youtube.com/vi/$videoId/maxresdefault.jpg"
-
-        // Just show the thumbnail as background
-        AsyncImage(
-            model = thumbnailUrl,
-            contentDescription = "Background",
-            modifier = modifier,
-            contentScale = androidx.compose.ui.layout.ContentScale.Crop
-        )
-    } else {
-        VideoPlayer(
-            videoUrl = videoUrl,
-            modifier = modifier,
-            autoPlay = true,
-            loop = true,
-            showControls = false,
-            isMuted = true,
-            onMuteToggle = onMuteToggle
-        )
-    }
+    VideoPlayer(
+        videoUrl = videoUrl,
+        modifier = modifier,
+        autoPlay = false,
+        loop = false,
+        showControls = false,
+        isMuted = true,
+        onMuteToggle = onMuteToggle
+    )
 }
 
 /**
  * Lesson video player with full controls
- * YouTube videos open in YouTube app with one tap
  */
 @Composable
 fun LessonVideoPlayer(
